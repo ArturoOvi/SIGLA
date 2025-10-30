@@ -1,0 +1,743 @@
+{
+  "info": {
+    "_postman_id": "api-sigla-2025",
+    "name": "API SIGLA 2025",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "7418211"
+  },
+  "item": [
+    {
+      "name": "Usuario",
+      "item": [
+        {
+          "name": "Listar Usuarios",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:81/apiSIGLA/usuario",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "81",
+              "path": ["apiSIGLA", "usuario"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener Usuario",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:81/apiSIGLA/usuario/208160929",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "81",
+              "path": ["apiSIGLA", "usuario", "208160929"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Crear Usuario",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"idUsuario\": 123456789,\n  \"nombre\": \"Juan\",\n  \"apellido1\": \"Pérez\",\n  \"apellido2\": \"González\",\n  \"telefono\": \"88887777\",\n  \"direccion\": \"San José, Escazú\",\n  \"correo\": \"juan.perez@example.com\",\n  \"numerodeCuenta\": \"CR1234567890123456\",\n  \"fechaIngreso\": \"2024-01-15\",\n  \"salario\": 850000,\n  \"saldoVacaciones\": 10,\n  \"idDepartamento\": 3,\n  \"idPuesto\": 7,\n  \"idRol\": 3,\n  \"estado\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:81/apiSIGLA/usuario",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "81",
+              "path": ["apiSIGLA", "usuario"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Actualizar Usuario",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"idUsuario\": 208160929,\n  \"nombre\": \"Valery Julliana\",\n  \"apellido1\": \"Arrollo\",\n  \"apellido2\": \"Barrantes\",\n  \"telefono\": \"61842429\",\n  \"direccion\": \"Alajuela, Naranjo, San Juan\",\n  \"correo\": \"vale.barrantes@gmail.com\",\n  \"numerodeCuenta\": \"CR5678901234567890\",\n  \"salario\": 1200000,\n  \"saldoVacaciones\": 5,\n  \"idDepartamento\": 5,\n  \"idPuesto\": 12,\n  \"idRol\": 3,\n  \"estado\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:81/apiSIGLA/usuario",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "81",
+              "path": ["apiSIGLA", "usuario"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Usuarios por Departamento",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:81/apiSIGLA/usuario/usuariosByDepartamento/3",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "81",
+              "path": ["apiSIGLA", "usuario", "usuariosByDepartamento", "3"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Ticket",
+      "item": [
+        {
+          "name": "Lista de Tickets",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:81/apiSIGLA/ticket",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "81",
+              "path": ["apiSIGLA", "ticket"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener Ticket",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:81/apiSIGLA/ticket/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "81",
+              "path": ["apiSIGLA", "ticket", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Crear Ticket",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"titulo\": \"Solicitud de vacaciones diciembre\",\n  \"descripcion\": \"Requiero tomar vacaciones del 1 al 15 de diciembre 2024\",\n  \"idPrioridad\": 2,\n  \"idEtiqueta\": 1,\n  \"idUsuarioSolicitante\": 208160929,\n  \"idCategoria\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:81/apiSIGLA/ticket",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "81",
+              "path": ["apiSIGLA", "ticket"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Actualizar Ticket",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"idTicket\": 1,\n  \"titulo\": \"Solicitud de vacaciones actualizada\",\n  \"descripcion\": \"Cambio de fechas: del 5 al 20 de diciembre\",\n  \"idEstado\": 3,\n  \"idPrioridad\": 3,\n  \"idUsuarioTecnico\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:81/apiSIGLA/ticket",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "81",
+              "path": ["apiSIGLA", "ticket"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Tickets por Usuario",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:81/apiSIGLA/ticket/ticketsByUsuario/208160929",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "81",
+              "path": ["apiSIGLA", "ticket", "ticketsByUsuario", "208160929"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Tickets por Estado",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:81/apiSIGLA/ticket/ticketsByEstado/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "81",
+              "path": ["apiSIGLA", "ticket", "ticketsByEstado", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Tickets por Tecnico",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:81/apiSIGLA/ticket/ticketsByTecnico/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "81",
+              "path": ["apiSIGLA", "ticket", "ticketsByTecnico", "1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Categoria",
+      "item": [
+        {
+          "name": "Lista de Categorias",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:81/apiSIGLA/categoria",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "81",
+              "path": ["apiSIGLA", "categoria"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener Categoria",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:81/apiSIGLA/categoria/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "81",
+              "path": ["apiSIGLA", "categoria", "1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Etiqueta",
+      "item": [
+        {
+          "name": "Lista de Etiquetas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:81/apiSIGLA/etiqueta",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "81",
+              "path": ["apiSIGLA", "etiqueta"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener Etiqueta",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:81/apiSIGLA/etiqueta/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "81",
+              "path": ["apiSIGLA", "etiqueta", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Etiquetas de una Categoria",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:81/apiSIGLA/etiqueta/getEtiquetaCategoria/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "81",
+              "path": ["apiSIGLA", "etiqueta", "getEtiquetaCategoria", "1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Comentario",
+      "item": [
+        {
+          "name": "Lista de Comentarios",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjEiLCJlbWFpbCI6ImFkbWluQHBydWViYS5jb20iLCJyb2wiOnsiaWQiOiIxIiwibmFtZSI6IkFkbWluaXN0cmFkb3IifSwiaWF0IjoxNzMxNTQ1NTIxLCJleHAiOjE3MzE1NDkxMjF9.hF7QuW9QSaEPvii-ogu0vt5RtgdP8eTAsl2hYWYiGjk",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:81/apiSIGLA/comentario",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "81",
+              "path": ["apiSIGLA", "comentario"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener Comentario",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:81/apiSIGLA/comentario/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "81",
+              "path": ["apiSIGLA", "comentario", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Comentarios de un Ticket",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:81/apiSIGLA/comentario/getComentarioTicket/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "81",
+              "path": ["apiSIGLA", "comentario", "getComentarioTicket", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Crear Comentario",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"comentario\": \"Se está procesando la solicitud de vacaciones\",\n  \"idTicket\": 1,\n  \"idRol\": 2\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:81/apiSIGLA/comentario",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "81",
+              "path": ["apiSIGLA", "comentario"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Imagen",
+      "item": [
+        {
+          "name": "Upload",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "ticket_id",
+                  "value": "1",
+                  "type": "text"
+                },
+                {
+                  "key": "idRol",
+                  "value": "2",
+                  "type": "text"
+                },
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": "/D:/Downloads/documento.jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:81/apiSIGLA/imagen",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "81",
+              "path": ["apiSIGLA", "imagen"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Login",
+      "item": [
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"idLogin\": \"vale\",\n  \"password\": \"123456\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:81/apiSIGLA/login",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "81",
+              "path": ["apiSIGLA", "login"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Crear Login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"idLogin\": \"nuevo_usuario\",\n  \"idUsuario\": 123456789,\n  \"password\": \"123456\",\n  \"idRol\": 3\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:81/apiSIGLA/login/crear",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "81",
+              "path": ["apiSIGLA", "login", "crear"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Departamento",
+      "item": [
+        {
+          "name": "Lista de Departamentos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:81/apiSIGLA/departamento",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "81",
+              "path": ["apiSIGLA", "departamento"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener Departamento",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:81/apiSIGLA/departamento/3",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "81",
+              "path": ["apiSIGLA", "departamento", "3"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Puesto",
+      "item": [
+        {
+          "name": "Lista de Puestos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:81/apiSIGLA/puesto",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "81",
+              "path": ["apiSIGLA", "puesto"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener Puesto",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:81/apiSIGLA/puesto/7",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "81",
+              "path": ["apiSIGLA", "puesto", "7"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Puestos por Departamento",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:81/apiSIGLA/puesto/puestosByDepartamento/3",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "81",
+              "path": ["apiSIGLA", "puesto", "puestosByDepartamento", "3"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Estado",
+      "item": [
+        {
+          "name": "Lista de Estados",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:81/apiSIGLA/estado",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "81",
+              "path": ["apiSIGLA", "estado"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Prioridad",
+      "item": [
+        {
+          "name": "Lista de Prioridades",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:81/apiSIGLA/prioridad",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "81",
+              "path": ["apiSIGLA", "prioridad"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Tecnico",
+      "item": [
+        {
+          "name": "Lista de Tecnicos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:81/apiSIGLA/tecnico",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "81",
+              "path": ["apiSIGLA", "tecnico"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener Tecnico",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:81/apiSIGLA/tecnico/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "81",
+              "path": ["apiSIGLA", "tecnico", "1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Historial Vacaciones",
+      "item": [
+        {
+          "name": "Lista de Historial",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:81/apiSIGLA/historialvacaciones",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "81",
+              "path": ["apiSIGLA", "historialvacaciones"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Historial por Usuario",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:81/apiSIGLA/historialvacaciones/historialByUsuario/208160929",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "81",
+              "path": ["apiSIGLA", "historialvacaciones", "historialByUsuario", "208160929"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Reportes",
+      "item": [
+        {
+          "name": "ticketsByEstadoResumen",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:81/apiSIGLA/reporte/ticketsByEstadoResumen",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "81",
+              "path": ["apiSIGLA", "reporte", "ticketsByEstadoResumen"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "ticketsByCategoriaResumen",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:81/apiSIGLA/reporte/ticketsByCategoriaResumen",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "81",
+              "path": ["apiSIGLA", "reporte", "ticketsByCategoriaResumen"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "empleadosByDepartamento",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:81/apiSIGLA/reporte/empleadosByDepartamento",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "81",
+              "path": ["apiSIGLA", "reporte", "empleadosByDepartamento"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
