@@ -20,6 +20,7 @@
     "@mui/icons-material": "^7.3.4",
     "@mui/material": "^7.3.4",
     "@mui/styled-engine-sc": "^7.3.3",
+    "@tanstack/react-table": "^8.21.3",
     "axios": "^1.12.2",
     "date-fns": "^4.1.0",
     "jwt-decode": "^4.0.0",

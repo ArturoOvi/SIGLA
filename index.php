@@ -33,6 +33,9 @@ require_once "models/SLAModel.php";
 require_once "models/ComentarioModel.php";
 require_once "models/ImagenModel.php";
 require_once "models/LoginModel.php";
+require_once "models/PuestoModel.php";
+require_once "models/DepartamentoModel.php";
+require_once "models/RolModel.php";
 
 /***--- Agregar todos los controladores*/
 require_once "controllers/UsuarioController.php";
@@ -44,6 +47,9 @@ require_once "controllers/SLAController.php";
 require_once "controllers/ComentarioController.php";
 require_once "controllers/ImagenController.php";
 require_once "controllers/LoginController.php";
+require_once "controllers/PuestoController.php";
+require_once "controllers/DepartamentoController.php";
+require_once "controllers/RolController.php";
 
 //Enrutador
 require_once "routes/RoutesController.php";

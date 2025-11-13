@@ -11,14 +11,21 @@ class LoginModel
     public function validate($usuario, $clave)
     {
         try {
-            $vSql = "SELECT u.idUsuario, u.nombre, u.usuario, u.idRol, r.nombreRol
-                     FROM usuario u
-                     INNER JOIN rol r ON u.idRol = r.idRol
-                     WHERE u.usuario = '$usuario' AND u.clave = '$clave';";
+            // 
+            $vSql = "
+                SELECT 
+                    usuario.idUsuario,
+                    usuario.idRol,
+                    usuario.nombre,
+                    rol.descripcionRol
+                FROM usuario
+                INNER JOIN rol ON usuario.idRol = rol.idRol
+                WHERE usuario.idUsuario = $usuario 
+                AND usuario.contrasenna = '$clave'
+                AND usuario.estado = 1";
 
             $resultado = $this->enlace->ExecuteSQL($vSql);
 
-            // Validación segura: si no hay resultados, retorna null
             if (is_array($resultado) && count($resultado) > 0) {
                 return $resultado[0];
             } else {
@@ -27,6 +34,7 @@ class LoginModel
 
         } catch (Exception $e) {
             handleException($e);
+            return null;
         }
     }
 }
